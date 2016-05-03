@@ -1,0 +1,30 @@
+---
+title: "Gapminder analysis"
+author: "Pat Schloss"
+date: "May 3, 2016"
+output: html_document
+---
+
+## Introduction
+
+
+## Methods
+
+
+## Results
+
+I'm interested in the change in aslkfjsda;lfjsd l;fjasl;dfj dfsl;j
+
+```{r, echo=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+
+gapminder <- read.csv("gapminder-FiveYearData.csv")
+
+gapminder %>% filter(year==1952) %>%
+	ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) + geom_point()
+```
+
+The total population in 1952 was `r gapminder %>% filter(year==1952) %>% select(pop) %>% sum`.
+
+
